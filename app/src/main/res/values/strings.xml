@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">GymGournal</string>
+    <string name="title_home">Home</string>
+    <string name="title_exercises">Exercises</string>
+    <string name="title_trainings">Trainings</string>
+    <string name="chart_description">Your top exercises</string>
+    <string name="title_activity_exercises">Exercises</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_trainings">Trainings</string>
+    <string name="title_activity_add_excercise">AddExcercise</string>
+    <string name="title_activity_add_training">AddTraining</string>
+
+    <!-- new exercise strings -->
+    <string name="hint_word">Exercise name…</string>
+    <string name="button_save">Save</string>
+    <string name="exercise_not_saved">Exercise not saved.</string>
+
+    <!-- new training strings -->
+    <string name="hint_date">Enter date of training… (yyyy/mm/dd)</string>
+    <string name="exercise_list_empty">Exercise list cannot be empty.</string>
+    <string name="date_desc">Date:</string>
+    <string name="exercises_desc">Exercises:</string>
+    <string name="rating_desc">Rating:</string>
+    <string name="training_not_saved">Training not saved.</string>
+    <string name="title_activity_training_details">TrainingDetails</string>
+    <string name="exercises_count">Current exercises count: 0</string>
+    <string name="add_exercises_button">Add exercises</string>
+
+    <!-- training details strings -->
+    <string name="training_desc">Training details</string>
+
+</resources>

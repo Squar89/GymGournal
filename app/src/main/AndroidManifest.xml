@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.gymgournal">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activities.Home"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.Exercises"
+            android:label="@string/title_activity_exercises"
+            android:parentActivityName=".activities.Home">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.gymgournal.activities.Home" />
+        </activity>
+        <activity
+            android:name=".activities.Trainings"
+            android:label="@string/title_activity_trainings"
+            android:parentActivityName=".activities.Home">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.gymgournal.activities.Home" />
+        </activity>
+        <activity
+            android:name=".activities.AddExercise"
+            android:label="@string/title_activity_add_excercise"
+            android:parentActivityName=".activities.Exercises"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.gymgournal.activities.Exercises" />
+        </activity>
+        <activity
+            android:name=".activities.AddTraining"
+            android:label="@string/title_activity_add_training"
+            android:parentActivityName=".activities.Trainings"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.gymgournal.activities.Trainings" />
+        </activity>
+        <activity
+            android:name=".activities.TrainingDetails"
+            android:label="@string/title_activity_training_details"
+            android:parentActivityName=".activities.Trainings">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.gymgournal.activities.Trainings" />
+        </activity>
+        <activity
+            android:name=".activities.ExercisesToAdd"
+            android:label="@string/add_exercises_button"
+            android:parentActivityName=".activities.AddTraining"
+            >
+        </activity>
+    </application>
+
+</manifest>
