@@ -83,7 +83,7 @@ public class Home extends AppCompatActivity {
         /* this function setups example data only for presentation purposes */
         /* if not commented, every visit at home activity will wipe database and setup the same */
         /* example objects */
-        //mGgViewModel.setupExampleData();//TODO
+        mGgViewModel.setupExampleData();//TODO
         /*========================================================================================*/
 
         new setupChartAsyncTask().execute();
