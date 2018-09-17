@@ -10,6 +10,8 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -68,7 +70,7 @@ public class Home extends AppCompatActivity {
         mGgViewModel = ViewModelProviders.of(this).get(GgViewModel.class);
 
         mTextMessage = findViewById(R.id.message);
-        BottomNavigationView navigation = findViewById(R.id.navigation);
+        final BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.setSelectedItemId(R.id.navigation_home);
 
@@ -78,13 +80,16 @@ public class Home extends AppCompatActivity {
         mTextStat2 = findViewById(R.id.stat2);
         new setupStat2AsyncTask().execute();
 
-        /*========================================================================================*/
-        /* THIS SHOULD BE COMMENTED AFTER SUCCESSFUL FIRST RUN */
-        /* this function setups example data only for presentation purposes */
-        /* if not commented, every visit at home activity will wipe database and setup the same */
-        /* example objects */
-        mGgViewModel.setupExampleData();//TODO
-        /*========================================================================================*/
+        Button loadDataButton = findViewById(R.id.load_data_button);
+        loadDataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mGgViewModel.setupExampleData();
+                Intent HomeIntent = new Intent(getApplicationContext(), Home.class);
+                startActivity(HomeIntent);
+                finish();
+            }
+        });
 
         new setupChartAsyncTask().execute();
     }
@@ -160,6 +165,8 @@ public class Home extends AppCompatActivity {
             @Override
             public void onNothingSelected() {}
         });
+
+
     }
 
     private class setupStat1AsyncTask extends AsyncTask<Void, Void, Void> {
